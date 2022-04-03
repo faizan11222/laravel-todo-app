@@ -1,0 +1,57 @@
+{
+    "name": "arimolzer/ipstack-finder",
+    "version": "1.0.4",
+    "description": "",
+    "keywords": [
+        "arimolzer",
+        "ipstack-finder"
+    ],
+    "homepage": "https://github.com/arimolzer/ipstack-finder",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Ari Molzer",
+            "email": "ari.molzer@molzertech.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.1",
+        "illuminate/support": "~5.5|^6|^7",
+        "guzzlehttp/guzzle": "~6.0",
+        "ext-json": "*"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^3.6",
+        "phpunit/phpunit": "^7.0",
+        "mockery/mockery": "^1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Arimolzer\\IPStackFinder\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Arimolzer\\IPStackFinder\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Arimolzer\\IPStackFinder\\IPStackFinderServiceProvider"
+            ],
+            "aliases": {
+                "IPFinder": "Arimolzer\\IPStackFinder\\IPStackFinderFacade"
+            }
+        }
+    }
+}
